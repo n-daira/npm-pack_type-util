@@ -39,7 +39,7 @@ export class StringUtil {
      * @param value - 検証する値, The value to be validated
      * @returns {boolean} - 値がメールアドレス形式であるかどうか, Whether the value is in the format of an email address
      */
-    public static isMail(value: any) {
+    public static isMail(value: any): value is string {
         if (typeof value !== 'string') {
             return false;
         }

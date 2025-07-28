@@ -6,7 +6,7 @@ export class DateTimeUtil {
      * @param value - 検証する値, The value to be validated
      * @returns {boolean} - 値が有効な日付時間形式であるかどうか, Whether the value is a valid date-time format
      */
-    private static isErrorDateTime(value: string): boolean {
+    private static isErrorDateTime(value: string): value is string {
         try {
             const [datePart, timePart] = value.split(' ');
             const [year, month, day] = datePart.split('-').map(Number);
@@ -82,7 +82,7 @@ export class DateTimeUtil {
      * @param value - The value to be validated, 検証する値
      * @returns {boolean} - Whether the value is in the format YYYY-MM-DD, 値がYYYY-MM-DD形式であるかどうか
      */
-    static isYYYYMMDD(value: any) {
+    static isYYYYMMDD(value: any): value is string {
         if (typeof value !== 'string') {
             return false;
         }
@@ -120,7 +120,7 @@ export class DateTimeUtil {
      * @param value - The value to be validated, 検証する値
      * @returns {boolean} - Whether the value is in the format YYYY-MM-DD hh:mm:ss, 値がYYYY-MM-DD hh:mm:ss形式であるかどうか
      */
-    static isHHMM(value: any) {
+    static isHHMM(value: any): value is string {
         if (typeof value !== 'string') {
             return false;
         }
@@ -135,7 +135,7 @@ export class DateTimeUtil {
      * @param value - The value to be validated, 検証する値
      * @returns {boolean} - Whether the value is in the format HH:MM:SS, 値がHH:MM:SS形式であるかどうか
      */
-    static isHHMMSS(value: any) {
+    static isHHMMSS(value: any): value is string {
         if (typeof value !== 'string') {
             return false;
         }
