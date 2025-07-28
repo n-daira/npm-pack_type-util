@@ -1,2 +1,2 @@
-export { ValidateDateTimeUtil } from './ValidateDateTimeUtil';
-export { ValidateStringUtil } from './ValidateStringUtil';
+export { DateTimeUtil } from './DateTimeUtil';
+export { StringUtil } from './StringUtil';

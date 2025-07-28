@@ -1,4 +1,4 @@
-export class ValidateStringUtil {
+export class StringUtil {
     public static isUUID(value: any): value is string {
         if (typeof value !== 'string') {
             return false;
@@ -74,5 +74,13 @@ export class ValidateStringUtil {
         // ・ =（パディング文字）
         const base64Pattern = /^[A-Za-z0-9+/]*={0,2}$/;
         return base64Pattern.test(value);
+    }
+
+    public static isEmpty(value: string | null | undefined): value is string {
+        if (value === undefined || value === null) {
+            return true;
+        }
+
+        return value.length === 0;
     }
 }
