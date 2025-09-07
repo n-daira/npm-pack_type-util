@@ -49,4 +49,18 @@ export class FileUtil {
             return false;
         }
     }
+
+    public static async convertUrlToFile(imageUrl: string, fileName: string): Promise<File> {
+        try {
+            // URLからデータを取得
+            const response = await fetch(imageUrl);
+            const blob = await response.blob();
+            
+            // BlobからFileオブジェクトを作成
+            const file = new File([blob], fileName, { type: blob.type });
+            return file;
+        } catch (error) {
+            throw error;
+        }
+    };
 }

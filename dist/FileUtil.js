@@ -64,5 +64,21 @@ class FileUtil {
             }
         });
     }
+    static convertUrlToFile(imageUrl, fileName) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                // URLからデータを取得
+                const response = yield fetch(imageUrl);
+                const blob = yield response.blob();
+                // BlobからFileオブジェクトを作成
+                const file = new File([blob], fileName, { type: blob.type });
+                return file;
+            }
+            catch (error) {
+                throw error;
+            }
+        });
+    }
+    ;
 }
 exports.FileUtil = FileUtil;
